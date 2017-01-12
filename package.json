@@ -1,0 +1,11 @@
+{
+  "name": "angular-event-emitter",
+  "version": "0.1.0",
+  "description": "Event Emitter class",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install"
+  },
+  "author": "Alessio Michelini",
+  "license": "MIT"
+}
