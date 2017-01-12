@@ -1,6 +1,6 @@
 {
   "name": "ng-event-emitter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Event Emitter class",
   "main": "index.js",
   "scripts": {

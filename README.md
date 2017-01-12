@@ -21,11 +21,33 @@ angular.module('myApp', ['ngEventEmitter'])
 
   this.events.triggerEvent('salute'); // it will print `hello world` in the console
 
+  // Passing data from the triggerEvent
   this.events.on('cheers', function(name){
     console.log('cheers ' + name);
   });
 
   this.events.triggerEvent('cheers', 'Alex'); // it will print `cheers Alex` in the console
+
+  // Multiple callbacks for the same event
+
+  this.events.on('test', function(){
+    console.log('test 1');
+  });
+
+  this.events.on('test', function(){
+    console.log('test 2');
+  });
+
+  this.events.triggerEvent('test'); // it will print `test 1` and `test 2` in the console
+
+  // One callback for multiple events with passed data
+
+  this.events.on(['test1', 'test2'], function(name){
+    console.log('hello ' + name);
+  });
+
+  this.events.triggerEvent('test1', 'Alex'); // it will print `test Alex` in the console
+  this.events.triggerEvent('test2', 'Liza'); // it will print `test Liza` in the console
 });
 
 ```
