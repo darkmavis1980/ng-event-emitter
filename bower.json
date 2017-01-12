@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "homepage": "https://stash.cremelabs.com/projects/EMA/repos/client/browse",
   "license": "MIT",
+  "main": [
+    "index.js"
+  ],
   "private": true,
   "dependencies": {
     "angular": "^1.6.1",
