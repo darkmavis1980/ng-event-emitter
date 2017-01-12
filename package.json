@@ -7,5 +7,8 @@
     "prestart": "npm install"
   },
   "author": "Alessio Michelini",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }

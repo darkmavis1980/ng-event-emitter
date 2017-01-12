@@ -6,6 +6,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "ng-lodash": "^0.5.x",
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-loader": "^1.6.1",
+    "ng-lodash": "^0.5.x"
   }
 }
