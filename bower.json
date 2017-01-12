@@ -1,11 +1,14 @@
 {
   "name": "ng-event-emitter",
   "description": "Event Emitter class for Angular.js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://stash.cremelabs.com/projects/EMA/repos/client/browse",
   "license": "MIT",
   "main": [
     "index.js"
+  ],
+  "ignore": [
+    "lib/"
   ],
   "private": true,
   "dependencies": {

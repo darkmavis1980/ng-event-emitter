@@ -29,3 +29,9 @@ angular.module('myApp', ['ngEventEmitter'])
 });
 
 ```
+
+---
+
+### Unit tests
+
+To run the unit tests, just use the command `npm test` from the command line, but be sure to have ran `npm install` and `bower install` before to install all the dependencies needed.

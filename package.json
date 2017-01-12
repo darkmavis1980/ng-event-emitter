@@ -1,14 +1,32 @@
 {
   "name": "ng-event-emitter",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Event Emitter class",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install"
+    "prestart": "npm install",
+    "test": "node ./lib/run.wiredep.js; karma start karma.conf.js"
   },
   "author": "Alessio Michelini",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-cli": "1.0.1",
+    "karma-coverage": "1.1.1",
+    "karma-firefox-launcher": "1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "0.2.2",
+    "karma-jasmine-matchers": "3.0.1",
+    "karma-junit-reporter": "1.1.0",
+    "karma-mocha-reporter": "2.2.0",
+    "karma-phantomjs-launcher": "1.0.2",
+    "karma-script-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.14"
   }
 }
