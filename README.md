@@ -2,6 +2,20 @@
 
 This is a small library to add an event emitter functionality in AngularJS 1.x, and it contains a small factory with two methods, `.on` and `.triggerEvent`, written mostly because I didn't want to depend to the $rootScope or the $scope providers, but to have a much more lightweight version of event emitters.
 
+## Installation
+
+To download the library you can do it via bower:
+
+```
+bower install ng-event-emitter --save
+```
+
+Or via NPM
+
+```
+npm install ng-event-emitter --save
+```
+
 To add to your angular project, just add the `ngEventEmitter` into your module dependencies, and `EventEmitter` as a dependency injection to your service/controller.
 
 The `.on(eventName, callback)` method requires two arguments, an *eventName* (a simple string to identify the event) and a *callback* function.

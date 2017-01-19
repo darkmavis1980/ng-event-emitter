@@ -1,9 +1,17 @@
 'use strict';
 
+/**
+ * @namespace ngEventEmitter
+ **/
+
 angular.module('ngEventEmitter',[
   'ngLodash'
 ])
 
+/**
+ * @namespace factories
+ * @memberOf  ngEventEmitter
+ **/
 .factory('EventEmitter', ['lodash',
   function(_){
     var EventEmitter = function(obj){
@@ -13,6 +21,13 @@ angular.module('ngEventEmitter',[
     };
 
     EventEmitter.prototype = {
+      /**
+       * @function      on
+       * @description   Add a callback to a specific event
+       * @param         {String} eventName - The event to trigger, eg: 'change'
+       * @param         {Function} callback - The callback to invoke with the event
+       * @memberOf      ngEventEmitter.factories
+       */
       on: function(eventName, callback){
         var that = this;
         // all the arguments are compulsory and callback must be a function
@@ -46,7 +61,7 @@ angular.module('ngEventEmitter',[
        * @description   This trigger the event
        * @param         {String} eventName - The event to trigger, eg: 'change'
        * @param         {Object} [data] - Optional data to pass to the callback
-       * @memberOf      EventEmitter
+       * @memberOf      ngEventEmitter.factories
        */
       triggerEvent: function(eventName, data){
         var that = this;

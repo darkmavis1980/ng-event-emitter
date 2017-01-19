@@ -17,5 +17,8 @@
     "angular-resource": "^1.6.1",
     "angular-loader": "^1.6.1",
     "ng-lodash": "^0.5.x"
+  },
+  "resolutions": {
+    "angular": "1.6.1"
   }
 }
