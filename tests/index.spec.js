@@ -36,9 +36,12 @@ describe('EventEmitter', function(){
 
 
     it('should not append anything if any of the arguments are passed', function(){
-      ee.on(null, function(){});
+      ee.on(null, function(){});  
       expect(ee.eventRegistry.null).toBeUndefined();
-      ee.on('change');
+
+      expect(function(){
+        ee.on('change');
+      }).toThrow();
       expect(ee.eventRegistry.change).toBeUndefined();
     });
   });

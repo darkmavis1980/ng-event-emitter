@@ -66,6 +66,20 @@ angular.module('myApp', ['ngEventEmitter'])
 
 ```
 
+If you want to clear all the callbacks previously assigned to a specific events, you can pass the options object as a second argument, specifying `clearEvent` to be `true`, as shown in the example below:
+
+```javascript
+this.events.on('test', function(){
+  console.log('test 1');
+});
+
+this.events.on('test', {clearEvent: true} function(){
+  console.log('test 2');
+});
+
+this.events.triggerEvent('test'); // it will print `test 2` only in the console
+```
+
 ---
 
 ### Unit tests
