@@ -25,34 +25,48 @@ angular.module('ngEventEmitter',[
        * @function      on
        * @description   Add a callback to a specific event
        * @param         {String} eventName - The event to trigger, eg: 'change'
+       * @param         {Object} [options] - Options to pass to the method
        * @param         {Function} callback - The callback to invoke with the event
        * @memberOf      ngEventEmitter.factories
        */
-      on: function(eventName, callback){
+      on: function(){
+        var eventName, callback, options;
+        switch(arguments.length){
+          case 2:
+            eventName = arguments[0];
+            callback = arguments[1];
+            break;
+          case 3:
+            eventName = arguments[0];
+            options = arguments[1];
+            callback = arguments[2];
+            break;
+          default:
+            throw 'Missing arguments for the on method';
+        }
         var that = this;
+        if(!_.isArray(eventName)){
+          eventName = [eventName];
+        };
+        var defaults = {
+          clearEvent: false
+        };
+
+        _.assignIn(defaults, options);
+
         // all the arguments are compulsory and callback must be a function
         if(!_.some(arguments, function(arg){
           return _.isUndefined(arg) || _.isNull(arg);
         }) && _.isFunction(callback)){
-          if(_.isArray(eventName)){
-            _.forEach(eventName, function(name){
-              if(!_.isArray(that.eventRegistry[name])){
-                that.eventRegistry[name] = [];
-              }
-              // check if it's not a duplicate
-              if(!_.includes(that.eventRegistry[name], callback)){
-                that.eventRegistry[name].push(callback);
-              }// end if
-            });
-          } else if(_.isString(eventName)){
-            if(!_.isArray(that.eventRegistry[eventName])){
-              that.eventRegistry[eventName] = [];
+          _.forEach(eventName, function(name){
+            if(!_.isArray(that.eventRegistry[name]) || defaults.clearEvent){
+              that.eventRegistry[name] = [];
             }// end if
             // check if it's not a duplicate
-            if(!_.includes(that.eventRegistry[eventName], callback)){
-              that.eventRegistry[eventName].push(callback);
+            if(!_.includes(that.eventRegistry[name], callback)){
+              that.eventRegistry[name].push(callback);
             }// end if
-          }// end if
+          });
         }// end if
       },
 
