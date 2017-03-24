@@ -73,7 +73,7 @@ this.events.on('test', function(){
   console.log('test 1');
 });
 
-this.events.on('test', {clearEvent: true} function(){
+this.events.on('test', {clearEvent: true}, function(){
   console.log('test 2');
 });
 
