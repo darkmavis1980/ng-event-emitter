@@ -1,6 +1,11 @@
 # ngEventEmitter
 
+
 This is a small library to add an event emitter functionality in AngularJS 1.x, and it contains a small factory with two methods, `.on` and `.triggerEvent`, written mostly because I didn't want to depend to the $rootScope or the $scope providers, but to have a much more lightweight version of event emitters.
+
+## This package is no longer developed
+
+Please consider using a different solution as this package is no longer developed.
 
 ## Installation
 
